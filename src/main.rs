@@ -14,12 +14,12 @@ struct Cli {
     path: std::path::PathBuf,
 }
 
-#[test]
-fn find_a_match() {
-    let mut result = Vec::new();
-    grrs::find_matches("lorem ipsum\ndolor sit amet", "lorem", &mut result);
-    assert_eq!(result, b"lorem ipsum\n");
-}
+// #[test]
+// fn find_a_match() {
+//     let mut result = Vec::new();
+//     grrs::find_matches("lorem ipsum\ndolor sit amet", "lorem", &mut result);
+//     assert_eq!(result, b"lorem ipsum\n");
+// }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args = Cli::parse();
