@@ -1,8 +1,8 @@
 [package]
-name = "grrs"
+name = "string_finder"
 version = "0.1.0"
 edition = "2021"
-authors = ["Oyeleke Elijah <oyeleke.elijah205@gmail.com>"]
+authors = ["lijah <oyeleke.elijah205@gmail.com>"]
 license = "MIT OR Apache-2.0"
 description = "A tool to search files"
 readme = "README.md"
@@ -19,6 +19,7 @@ anyhow = "1.0"
 indicatif = "0.17.5"
 log = "0.4.0"
 env_logger = "0.10.0"
+human-panic = "1.1.5"
 
 [dev-dependencies]
 assert_cmd = "2.0.11"

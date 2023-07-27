@@ -5,7 +5,7 @@ use assert_fs::prelude::*;
 
 #[test]
 fn file_doesnt_exist() -> Result<(), Box<dyn std::error::Error>> {
-    let mut cmd = Command::cargo_bin("grrs")?;
+    let mut cmd = Command::cargo_bin("string_finder")?;
 
     cmd.arg("foobar").arg("test/file/doesnt/exist");
     cmd.assert()
@@ -21,7 +21,7 @@ fn find_content_in_file() -> Result<(), Box<dyn std::error::Error>> {
     let file = assert_fs::NamedTempFile::new("sample.txt")?;
     file.write_str("A test\nActual content\nMore content\nAnother test")?;
 
-    let mut cmd = Command::cargo_bin("grrs")?;
+    let mut cmd = Command::cargo_bin("string_finder")?;
     cmd.arg("test").arg(file.path());
     cmd.assert()
         .success()
@@ -36,7 +36,7 @@ fn find_content_in_file() -> Result<(), Box<dyn std::error::Error>> {
 //     let file = assert_fs::NamedTempFile::new("sample.txt")?;
 //     file.write_str("A test\nActual content\nMore content\nAnother test")?;
 
-//     let mut cmd = Command::cargo_bin("grrs")?;
+//     let mut cmd = Command::cargo_bin("string_finder")?;
 //     cmd.arg(" ").arg(file.path());
 //     cmd.assert()
 //     .failure()
